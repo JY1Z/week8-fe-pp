@@ -6,7 +6,7 @@ import AuthContext from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  // const { setUser } = useContext(AuthContext);
+  const { setUser } = useContext(AuthContext);
   const email = useField("email");
   const password = useField("password");
 
@@ -18,7 +18,7 @@ const Login = () => {
 
       if (userData) {
           console.log("Login successful:", userData);
-          setUser({ token: response.data.token, email: formData.email });
+          setUser({ token: userData.token, email: userData.email });
           navigate("/"); // Redirect to home or desired page
       } else {
           console.error("Login failed:", error);

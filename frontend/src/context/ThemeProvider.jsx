@@ -11,7 +11,7 @@ const ThemeProvider = ({ children }) => {
 
   // Define the theme values
   const theme = {
-    backgroundColor: isDarkMode ? "#f1356d" : "#FFF", // Dark mode: #f1356d, Light mode: white
+    backgroundColor: isDarkMode ? "#280020" : "#FFF", // Dark mode: #f1356d, Light mode: white
     color: isDarkMode ? "#FFF" : "#000",             // Dark mode: white text, Light mode: black text
     toggleTheme,                                      // Function to switch between dark/light mode
   };

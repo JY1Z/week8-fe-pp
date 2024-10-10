@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
-import ThemeContext from '../context/ThemeContext';
+// import { useContext } from 'react';
+// import ThemeContext from '../context/ThemeContext';
+import { useTheme } from "../hooks/useTheme";
 
 const JobListings = ({ jobs }) => {
-  const { backgroundColor } = useContext(ThemeContext);
+  const { backgroundColor, color } = useTheme();
+  // const { backgroundColor } = useContext(ThemeContext);
   // const backgroundColor="#000";
 
   return (
-    <div className="job-list" style={{ backgroundColor, }}>
+    <div className="job-list">
       {jobs.map((job) => (
 
         <div className="job-preview" key={job.id}>

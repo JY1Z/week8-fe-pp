@@ -32,7 +32,7 @@ const Signup = () => {
 
     if (userData) {
       console.log("success");
-      setUser({ token: response.data.token, email: formData.email }); 
+      setUser({ token: userData.token, email: userData.email }); 
       navigate("/"); // Redirect to home or desired page
     } else {
       console.error("Signup failed:", error);

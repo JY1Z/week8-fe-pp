@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 import LoadingSpinner from "./LoadingSpinner";
-import ThemeContext from "../context/ThemeContext";
+import { useTheme } from "../hooks/useTheme";
 
 const Navbar = () => {
   const { isAuthenticated, clearUser, email, isLoading } = useContext(AuthContext);
-  const { toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useTheme(); // Access the theme context using the custom hook
 
   const handleClick = (e) => {
     clearUser(); // Log the user out by clearing their authentication data
@@ -56,7 +56,7 @@ export default Navbar;
 //   //const isAuthenticated = false;
 
 //   //const toggleTheme = () => {
-//     // 
+//     //
 //   //};
 //   const handleClick = (e) => {
 //     // clearUser();
@@ -73,7 +73,7 @@ export default Navbar;
 //       <div className="links">
 //         <div>
 //           <Link to="/jobs/add-job">Add Job</Link>
-//           {email && <span>{email}</span>} 
+//           {email && <span>{email}</span>}
 //           <button onClick={handleClick}>Log out</button>
 //         </div>
 //         <div>

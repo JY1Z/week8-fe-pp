@@ -21,7 +21,6 @@ const EditJobPage = () => {
   const { token, isLoading } = useContext(AuthContext); // Access Auth
   //const user = JSON.parse(localStorage.getItem("user"));
   //const token = user ? user.token : null;
-
   const navigate = useNavigate();
 
   // Fetch job data only if authenticated
